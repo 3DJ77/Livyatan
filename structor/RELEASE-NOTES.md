@@ -12,12 +12,15 @@ First public release.
 - Top bar in three panes: file, build, view. Hover any button for its shortcut. Size
   inspector and parts list on the right. Every shape on the palette with a rendered icon.
 - Look: Solarized palette shared by the whole suite; A+ / A- text scale for every module.
-- Backdrop: the operator places the shop around the plate with the SpaceMouse (MAGIC
-  CARPET in the DEBUG pane) or VIEW > BG LEVEL; the placement is kept per backdrop in
-  `~/.config/structor/backdrop.json`. The shipped default is the author's placement.
+- Environment: the plate sits on the floor of a modelled space — SHOP 3D (a 30 m shop
+  bay, the launch view), HILLS 3D (open ground), SPACE 3D (a station bay) — so the view
+  keeps true perspective from any angle. The older SHOP / HILLS / SPACE photo domes stay
+  in VIEW. The operator places the environment around the plate with the SpaceMouse
+  (MAGIC CARPET in the DEBUG pane) or VIEW > BG LEVEL; the placement is kept per
+  environment in `~/.config/structor/backdrop.json`.
 - Fixed: an installed Structor crashed on its first backdrop (absolute asset path);
   saves went to an unwritable directory under a package install; the seed part was a
   2 mm dot on a 300 mm plate; a SpaceMouse fly left HOME / FIT ALL dead.
 
-Known: the backdrop is a photo on a sphere and distorts away from the sweet spot; a
-modelled shop environment is planned for the first update.
+Known: the 3D environments are greybox — tiles cropped from the old panoramas and plain
+box stand-ins for the machines; proper tiles and modelled props come in the first update.

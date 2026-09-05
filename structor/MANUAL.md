@@ -131,7 +131,7 @@ parts for a real shop takes the builder's name, not the architect's.
   preview and every export — hiding is a view, not a delete.
 - **Z datum** — the inspector's Z row is the part's BASE, so Z = 0 rests it on
   the plate (the centre is what moves; the ruler's Z leg reads the same base).
-- **Backdrops** — SHOP / HILLS / SPACE skydome wallpapers, BG LEVEL trim.
+- **Backdrops** — VIEW menu. SHOP 3D / HILLS 3D / SPACE 3D are levels: real geometry at 1 mm units (a 30 m shop bay, open ground, a station bay) with the plate sitting on the floor, so the view keeps true perspective from any angle. SHOP / HILLS / SPACE are the older skydome wallpapers. BG LEVEL / MAGIC CARPET move whichever is up. Stay inside a level's walls: orbiting out past them shows the sky through the back of the wall.
 - **SpaceMouse** — direct hidraw driver (no daemon), full 6-axis nav with the
   CHIMAERA shared-feel system: every sign/source/sensitivity is user data in
   `~/.config/structor/nav.json`, edited live in the NAV panel.

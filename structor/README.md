@@ -17,7 +17,7 @@ for. Measured on real hardware, not guessed:
 | GTX 1650 desktop | low | ~1.1 s (software rendering) |
 | Strix Halo 128GB | high | runs; instant |
 
-![Structor — a box on the build plate, gizmos live](assets/screenshot.png)
+![Structor — a box on the plate in the SHOP 3D bay](assets/screenshot.png)
 
 ## Quickstart
 
