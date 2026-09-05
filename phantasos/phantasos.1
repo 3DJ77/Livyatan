@@ -1,0 +1,52 @@
+.TH PHANTASOS 1 "2026" "Livyatan Design Suite" "User Commands"
+.SH NAME
+phantasos \- image generation on your own iron
+.SH SYNOPSIS
+.B phantasos
+.br
+.B phantasos shape
+\fI"prompt"\fR [\fIOUT.png\fR] [\fB\-\-model\fR \fINAME\fR] [\fB\-\-seed\fR \fIN\fR] [\fB\-\-size\fR \fIN\fR] [\fB\-\-from\fR \fIIMAGE\fR]
+.br
+.B phantasos models
+.br
+.B phantasos fetch
+\fIMODEL\fR
+.SH DESCRIPTION
+Bare invocation opens the window: type a prompt, press Shape. Renders run
+on a local stable-diffusion.cpp (Vulkan) backend \(em no cloud, no account.
+The first render loads the model and takes minutes; after that the model
+stays resident. Closing the window shuts the backend down and frees the GPU.
+.PP
+Models: \fBklein\fR (FLUX.2 klein 4B, the default \(em text-to-image and
+reference edit in one 4-step model), \fBschnell\fR (FLUX.1 Schnell) and
+\fBflux2dev\fR (FLUX.2 dev, non-commercial weights). No weights ship in the
+package; \fBphantasos fetch\fR \fIMODEL\fR downloads a model's files from the
+publisher into PHANTASOS_MODEL_DIR (resumable, size-verified) and
+\fBphantasos models\fR lists sizes and what is installed. \fB\-\-size\fR sets the
+square output edge for both width and height (default 1024, range
+256\-4096); the window always renders 1024x1024. The Fetch button in
+the window does the same for the selected model. With \fB\-\-from\fR (or Pick
+image in the window) klein treats the image as a reference and the prompt as
+the change; the other models redraw it as img2img at PHANTASOS_STRENGTH.
+.SH ENVIRONMENT
+.TP
+.B PHANTASOS_SD_DIR
+Directory holding sd-server/sd-cli when not on PATH.
+.TP
+.B PHANTASOS_MODEL_DIR
+Model weights (default ~/.local/share/phantasos/models).
+.TP
+.B PHANTASOS_OUT_DIR
+Where renders land (default ~/Phantasos).
+.TP
+.B PHANTASOS_SD_PORT
+Loopback port the resident sd-server listens on (default 7860).
+.TP
+.B PHANTASOS_STRENGTH
+img2img denoising strength for \fB\-\-from\fR on schnell/flux2dev
+(default 0.6; klein's reference lane ignores it).
+.SH SEE ALSO
+.BR gilgamesh (1),
+.BR kish (1),
+.BR livyatan (7).
+Setup (weights, GPU floor): /usr/share/doc/phantasos/README.md

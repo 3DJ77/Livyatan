@@ -1,0 +1,100 @@
+.TH GILGAMESH 1 "2026" "Livyatan Design Suite" "User Commands"
+.SH NAME
+gilgamesh \- photo or prompt to a watertight, mm-scaled STL
+.SH SYNOPSIS
+.B gilgamesh
+[\fIFILE\fR]
+.br
+.B gilgamesh chain
+\fIIMAGE-or-"words"\fR [\fIHEIGHT_MM\fR]
+.br
+.B gilgamesh remesh
+\fIIN.stl OUT.stl\fR [\fIVOXEL_MM\fR] [\fICLOSE_MM\fR] [\fB\-\-mm\fR \fIHEIGHT\fR]
+.br
+.B gilgamesh render
+\fIIN.stl OUT.png\fR [\fB\-\-size\fR \fIWxH\fR] [\fB\-\-yaw\fR \fID\fR] [\fB\-\-pitch\fR \fID\fR]
+.SH DESCRIPTION
+Bare invocation opens the window. The chain turns a photo (or, with a
+text-to-image backend, a prompt) into a printable solid via a local
+trellis.cpp reconstruction server, then welds it watertight. remesh welds
+any STL watertight on its own; render draws a quick shaded preview PNG.
+.PP
+Text mode is optional: it needs
+.BR phantasos (1)
+on PATH or
+.B TXT2IMG_CMD
+set. Image mode needs neither, only the trellis.cpp server.
+.PP
+.B gilgamesh chain
+writes its output to
+.B TRELLIS_OUT
+(default: the current directory), unlike the window which writes to
+.BR GILGAMESH_OUT .
+.PP
+.B gilgamesh remesh
+takes voxel size and closing radius (mm) positionally;
+.B \-\-mm
+.I HEIGHT
+scales the result so its tallest axis is HEIGHT mm.
+.PP
+.B gilgamesh render
+draws IN.stl to OUT.png on a transparent background, CPU only, no window.
+Its flags are --size WxH, --yaw D and --pitch D:
+.TP
+.BI \-\-size " WxH"
+Output size in pixels, both > 0. Default 1024x1024.
+.TP
+.BI \-\-yaw " D"
+Camera orbit around the model's vertical axis, degrees. Default 30.
+.TP
+.BI \-\-pitch " D"
+Camera elevation, degrees; negative looks down at the model. Default \-12.
+.SH ENVIRONMENT
+.TP
+.B TRELLIS_URL
+The trellis.cpp server (the reconstruction step; you run it). Default
+http://127.0.0.1:8080; set it when the server is on another host or port.
+.TP
+.B TRELLIS_OUT
+Output directory for the
+.B chain
+subcommand (default: current directory). The window ignores it.
+.TP
+.B GILGAMESH_OUT
+Output directory for the window (default ~/GilgaMESH).
+.TP
+.B TXT2IMG_CMD
+Command taking PROMPT OUT.png for the words path (default: phantasos).
+.TP
+.B GILGAMESH_SEED
+Reconstruction seed sent to the server. Default: a hash of the input
+image, so the same picture reproduces the same mesh. Set an integer to
+pin or re-roll.
+.TP
+.B GILGAMESH_RES
+Reconstruction resolution (512, 1024, 1536) passed to the server when its
+build supports it. Unset: the server's own default.
+.TP
+.B GILGAMESH_VOXEL, GILGAMESH_CLOSE
+Chain-path remesh voxel size / closing radius in mm, defaults 0.35 / 0.8
+(the remesh subcommand takes these positionally instead).
+.TP
+.B GILGAMESH_MIN_WALL
+Minimum thickness in mm given to healed thin sheets, default 0.8 (two
+0.4mm perimeters), floored at 2.2 times the voxel. Chain and remesh.
+.TP
+.B GILGAMESH_DUMP_DROPPED
+Debug: set to a directory and the remesh writes every discarded body
+larger than 5% of the kept one there as STLs. Chain and remesh.
+.TP
+.B GILGAMESH_WALL_REPORT
+Debug: set (any value) to print an experimental, uncalibrated thin-wall
+estimate after the remesh. Chain and remesh.
+.TP
+.B GG_REAL_GLB
+Tests only: input GLB for the ignored real_glb_through_native_remesh
+test. No effect on the binary.
+.SH SEE ALSO
+.BR phantasos (1),
+.BR jove (1),
+.BR livyatan (7).
