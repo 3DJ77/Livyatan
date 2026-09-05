@@ -1,5 +1,9 @@
 # GilgaMESH
 
+Current release: 0.2.0
+
+![GilgaMESH — the window](assets/screenshot.png)
+
 **Photo or prompt → watertight, correctly-oriented, mm-scaled STL. Fully
 local, AMD/Vulkan friendly, no cloud, no subscription, no account.**
 
@@ -57,9 +61,20 @@ no Python, no Blender, no glue scripts to install.
    `http://127.0.0.1:8080` — if the server runs on another machine or
    another port, set it (`TRELLIS_URL=http://otherbox:8080 gilgamesh`).
    A chain that hangs at `[trellis]` is almost always this.
+
+   **Start the server with background removal on** — `--birefnet` on
+   trellis.cpp's `trellis-server`. This one flag decides whether you get a
+   model or confetti: without it the reconstruction includes the whole
+   photograph — table, wall, shadow — and the remesh reports hundreds of
+   dropped bodies. Same photo, measured: 1,760 loose bodies without it,
+   51 with it. When the stage log prints a `[hint] … confetti` line, that
+   is what happened. See *Background removal* below.
 2. **Run `gilgamesh`.** No arguments opens the window: pick an image (or
    type a prompt), set a height in mm, watch the stages run live. Output
-   lands in `~/GilgaMESH` (override with `GILGAMESH_OUT`).
+   lands in `~/GilgaMESH` (override with `GILGAMESH_OUT`). **Rotate 90°**
+   and **Crop to square** fix the picked photo before it goes to the
+   server (a sideways phone shot, clutter at the edges); each writes a
+   new PNG beside the outputs and the chain reads that one.
 
 Prefer the command line? The same chain runs headless behind a
 subcommand:
@@ -121,6 +136,27 @@ the output makes sense when you reach for them:
 | `GILGAMESH_DUMP_DROPPED=<dir>` | the remesh writes every discarded body bigger than 5% of the keeper into `<dir>` as STLs, so "did it throw away a wall?" is answered by eye, not inference. Both paths |
 | `GILGAMESH_WALL_REPORT` | set (any value) to print an **experimental** thin-wall estimate after the remesh. Truthful but not yet calibrated to the walls you care about — repair-seam remnants dominate the thin tail — so it stays quiet by default. Both paths |
 | `GG_REAL_GLB=<file.glb>` | test-only: input for the ignored test `real_glb_through_native_remesh` (`cargo test --release -- --ignored real_glb`), which pushes a real reconstruction GLB through the native remesh and prints timings. Does nothing in the binary |
+
+## Background removal
+
+TRELLIS reconstructs *everything in the frame*. A photo of one thing on a
+plain background gives one body; a photo of one thing on a workbench gives
+the thing, the bench, and a cloud of fragments the remesh then discards.
+trellis.cpp's server can strip the background first — start it with
+`--birefnet` (BiRefNet matting, bundled with its weights). GilgaMESH does
+not do this itself: it ships the picture you give it and takes back what
+the server returns. Two ways to keep the confetti out:
+
+1. run `trellis-server … --birefnet` (recommended — one flag, every photo);
+2. give it a clean picture: one object, plain background, or use
+   **Crop to square** to cut the clutter out of the frame.
+
+The tell in the stage log is `dropped N bodies`. Single digits to a few
+dozen is normal debris; hundreds means the background came along, and the
+log says so with a `[hint]` line.
+
+Also: a photo of a **drawing** reconstructs a sheet of paper — correctly.
+The server builds the object it sees, and what it sees is paper.
 
 ## Two lessons this repo paid for
 

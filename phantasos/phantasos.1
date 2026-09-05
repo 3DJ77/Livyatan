@@ -25,7 +25,9 @@ publisher into PHANTASOS_MODEL_DIR (resumable, size-verified) and
 \fBphantasos models\fR lists sizes and what is installed. \fB\-\-size\fR sets the
 square output edge for both width and height (default 1024, range
 256\-4096); the window always renders 1024x1024. The Fetch button in
-the window does the same for the selected model. With \fB\-\-from\fR (or Pick
+the window does the same for the selected model; the \fBWeights:\fR button
+shows the folder in force and picks another (saved to
+~/.config/phantasos/model_dir). With \fB\-\-from\fR (or Pick
 image in the window) klein treats the image as a reference and the prompt as
 the change; the other models redraw it as img2img at PHANTASOS_STRENGTH.
 .SH ENVIRONMENT
@@ -34,7 +36,9 @@ the change; the other models redraw it as img2img at PHANTASOS_STRENGTH.
 Directory holding sd-server/sd-cli when not on PATH.
 .TP
 .B PHANTASOS_MODEL_DIR
-Model weights (default ~/.local/share/phantasos/models).
+Model weights. Overrides the folder picked with the Weights button
+(~/.config/phantasos/model_dir); default ~/.local/share/phantasos/models.
+
 .TP
 .B PHANTASOS_OUT_DIR
 Where renders land (default ~/Phantasos).

@@ -1,0 +1,88 @@
+.TH STRUCTOR 1 "2026" "Livyatan Design Suite" "User Commands"
+.SH NAME
+structor \- CAD bench: solids in, drawings and cut files out
+.SH SYNOPSIS
+.B structor
+.br
+.B structor \-\-version
+.SH DESCRIPTION
+Bare invocation opens the CAD window: drop primitive solids on the build
+plate, drag/rotate/scale with gizmos, mark holes, group and boolean-merge,
+then EXPORT STL or run SHOP EXPORT (cut files, flat patterns, dimensioned
+sheets, and a BOM straight from the model). Press F on a part to cycle its
+fabrication tag (FLAT/ROLLED/CNC/PRINT/CAST/STOCK); Shift+F steps a ROLLED
+part's seam, Shift+T its plate gauge.
+.PP
+SAVE (Ctrl+S) and OPEN (Ctrl+O) keep the scene as a .SigN file (readable
+JSON-CSG) through the file dialog, default folder ~/Structor; the scene also
+autosaves to ~/Structor/autosave.SigN once a minute when it changed. HIDE
+takes the selected parts out of the viewport, SHOW ALL restores them; hidden
+parts still export. The inspector's Z row is the part's base: Z = 0 rests it
+on the plate. The parts list under the palette hides/shows (dot) and selects
+(name). REST drops the selection onto the plate (or onto the other picked
+part); FIT ALL (H, nothing selected) frames every part; MEASURE reads the
+distance between two clicked points; RECENT reopens one of the last five
+scenes; UNDO/REDO carry their depth; UNITS switches the inspector and
+readouts between mm and inches; Ctrl+I imports, Ctrl+E exports STL. A
+palette click leaves the keyboard in the new part's first dimension field.
+New parts arrive at 25.4 mm. Hover a toolbar button for its chord. A+ / A-
+scale the UI text of every Livyatan module (restart to apply).
+.SH ENVIRONMENT
+.TP
+.B SIG_OPEN
+Path to a .SigN scene to load at launch.
+.TP
+.B SIG_IMPORT
+STL/OBJ to import at launch.
+.TP
+.B SIG_UNITS
+Set to
+.B in
+to start the UNITS toggle in inches (default mm).
+.TP
+.B SIG_COOP_W
+Initial DEBUG pane width in pixels (default 340; dragging clamps to 240\-720).
+.TP
+.B SIG_BG_LIFT
+Backdrop lift = the Y of the backdrop placement (see SIG_BG_X/Z/YAW/PITCH/ROLL).
+The placement the operator locks (MAGIC CARPET in the DEBUG pane, or VIEW > BG
+LEVEL) lives in ~/.config/structor/backdrop.json and overrides these defaults.
+.TP
+.B SIG_BG_X, SIG_BG_Z, SIG_BG_YAW, SIG_BG_PITCH, SIG_BG_ROLL
+Launch defaults for the backdrop placement around the plate (world units, degrees).
+.TP
+.B SIG_SSAO
+Set to
+.B 1
+to enable SSAO (off by default: it bands the skydome).
+.TP
+.B SIG_INPUT_TRACE
+Set (any value) to print WHEEL/PAN input events to stderr.
+.TP
+.B STRUCTOR_ICON_OUT
+Test-only: directory the ignored test dump_palette_shapes writes the palette
+shape STLs to (the source of the palette icons). Does nothing in the binary.
+.TP
+.B DROP_QA
+In-process QA script path (the drop toolkit's lane); unset in normal use.
+.TP
+.B LIVYATAN_THEME
+Palette for comparison shots (livyatan, tokyo-night, gruvbox, catppuccin);
+the default is what ships.
+.SH FILES
+.TP
+.B ~/Structor/
+Default folder for SAVE / OPEN and the once-a-minute autosave.SigN.
+.PP
+The full env-knob table (mouse/puck feel, per-axis sign trims, backdrop
+orientation) is in the MANUAL; the NAV panel and nav.json are the durable home
+for feel.
+.SH FILES
+.TP
+.I ~/.config/structor/nav.json
+Navigation feel (every sign/source/sensitivity; edited live in the NAV panel).
+.SH SEE ALSO
+.BR hephaestus (1),
+.BR labyrinth (1),
+.BR livyatan (7).
+Full manual: /usr/share/doc/structor/MANUAL.md

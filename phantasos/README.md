@@ -1,5 +1,9 @@
 # Phantasos
 
+Current release: 0.3.0
+
+![Phantasos — the window](assets/screenshot.png)
+
 **AI image generation, fully local. Type a prompt, get a render — on
 whatever GPU you have.** This is the **klein fork**: FLUX.2 klein 4B is
 the default model, and "start from an image" is a real edit (the picture
@@ -55,9 +59,13 @@ own machine.
    Or press **Fetch** in the window next to the model picker — it pulls
    whichever model is selected and narrates in the status line. Downloads
    are resumable (a `.part` file stays put on failure) and verified by size.
-   Weights land in `PHANTASOS_MODEL_DIR` (default
-   `~/.local/share/phantasos/models`, under `flux2-klein/`, `flux/`,
-   `flux2/`); point that at an existing directory if you already have them.
+   Weights land in the **Weights** folder shown on the button under the
+   model picker (default `~/.local/share/phantasos/models`, under
+   `flux2-klein/`, `flux/`, `flux2/`). **Already have the files** — on a
+   shared drive, from another box? Press **Weights: …**, pick that folder,
+   and the status line says what is installed there before you fetch
+   anything. The choice is saved to `~/.config/phantasos/model_dir`;
+   `PHANTASOS_MODEL_DIR` in the environment overrides it.
    Model weights are licensed by their publishers, not by this tool
    (FLUX.2 klein and FLUX.1 Schnell are Apache-2.0; FLUX.2 dev carries
    Black Forest Labs' non-commercial license).
@@ -73,21 +81,24 @@ truncated download never masquerades as installed.
 |---|---|---|---|
 | klein | `flux2-klein/flux-2-klein-4b-Q8_0.gguf` | 4.3 GB | `leejet/FLUX.2-klein-4B-GGUF` |
 | klein | `flux2-klein/qwen_3_4b.safetensors` | 8.0 GB | `Comfy-Org/flux2-klein-4B` |
-| klein, flux2dev | `flux2/flux2-vae.safetensors` | 0.34 GB | `Comfy-Org/flux2-klein-4B` |
+| klein | `flux2-klein/flux2-vae.safetensors` | 0.34 GB | `Comfy-Org/flux2-klein-4B` |
 | schnell | `flux/flux1-schnell-q4_0.gguf` | 6.9 GB | `leejet/FLUX.1-schnell-gguf` |
 | schnell | `flux/t5xxl_fp16.safetensors` | 9.8 GB | `comfyanonymous/flux_text_encoders` |
 | schnell | `flux/clip_l.safetensors` | 0.25 GB | `comfyanonymous/flux_text_encoders` |
 | schnell | `flux/ae.safetensors` | 0.34 GB | `black-forest-labs/FLUX.1-schnell` |
+| flux2dev | `flux2/flux2-vae.safetensors` | 0.34 GB | `Comfy-Org/flux2-dev` |
 | flux2dev | `flux2/flux2-dev-Q6_K.gguf` | 27.4 GB | `city96/FLUX.2-dev-gguf` |
 | flux2dev | `flux2/Mistral-Small-3.2-24B-Instruct-2506-Q4_K_M.gguf` | 14.3 GB | `unsloth/Mistral-Small-3.2-24B-Instruct-2506-GGUF` |
 
-All are `https://huggingface.co/<repo>/resolve/main/<file>`. Klein's VAE sits
-under `flux2/`, not `flux2-klein/` — FLUX.2 dev uses the same file, and it is
-only fetched once. If you already have these files, point
-`PHANTASOS_MODEL_DIR` at the directory that holds those three subdirectories
-rather than downloading them again.
+All are `https://huggingface.co/<repo>/resolve/main/<file>`. Klein and
+FLUX.2 dev each have a `flux2-vae.safetensors` — two *different* 336 MB
+files with the same name (336,211,292 vs 336,213,556 bytes), so each lives
+in its own model folder. If you already have these files, press
+**Weights: …** in the window (or set `PHANTASOS_MODEL_DIR`) and point it at
+the directory that holds those three subdirectories rather than downloading
+them again.
 
-3. **Run `phantasos`.** Type a prompt, press Shape. First render pays the
+3. **Run `phantasos`.** Type a prompt, press **Create Image**. First render pays the
    model load; after that it's resident and stays fast. Switch models any
    time with the **Model** button (or `--model` on the CLI) — a model you
    haven't fetched fails loud with the fetch command, never a hang.

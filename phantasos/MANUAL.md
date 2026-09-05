@@ -53,8 +53,12 @@ the suite can make them real. Kin in the pantheon:
     along as context, the prompt is the change) — no strength knob.
   - **Schnell** (FLUX.1 Schnell, Apache-2.0) — 4 steps, cfg 1.0, euler. Resident.
   - **FLUX.2 dev** — 20 steps. Non-resident, one-shot (slow by design).
-- **Fetch** — pulls the selected model's weights from the publisher into
-  `PHANTASOS_MODEL_DIR` (same table as `phantasos fetch MODEL`; `phantasos
+- **Weights: <folder>** — where the weight files live; press it to pick another
+  folder (zenity). The status line then says whether the selected model is
+  installed THERE, so a wrong folder never costs a 27 GB download. Saved to
+  `~/.config/phantasos/model_dir`; `PHANTASOS_MODEL_DIR` overrides it.
+- **Fetch** — pulls the selected model's weights from the publisher into the
+  Weights folder (same table as `phantasos fetch MODEL`; `phantasos
   models` lists what's installed). Resumable, size-verified, one file at a
   time, progress in the status line. Shape on an unfetched model fails loud
   with the command to run.
@@ -66,12 +70,15 @@ the suite can make them real. Kin in the pantheon:
 - **Open in…** — hands the current render to gimp/krita/inkscape/gthumb/eog/
   feh/nomacs; first installed wins, `swap` cycles, choice persisted to
   `~/.config/phantasos/editor`.
+- **A+ / A-** — UI text scale for every Livyatan module (saved to
+  `~/.config/livyatan/ui-scale`; restart to apply).
 - **Fit to monitor** — native Lanczos resize to the monitor the window is
   on (up or down), then opens the copy in the editor.
 
 | var | default | what |
 |---|---|---|
-| `PHANTASOS_MODEL_DIR` | `~/.local/share/phantasos/models` | weight files (`flux2-klein/`, `flux/`, `flux2/`) |
+| `PHANTASOS_MODEL_DIR` | the Weights button's folder, else `~/.local/share/phantasos/models` | weight files (`flux2-klein/`, `flux/`, `flux2/`); the env var wins over the saved pick |
+| `LIVYATAN_THEME` | `livyatan` | comparison knob: `tokyo-night` / `gruvbox` / `catppuccin` palettes for screenshots |
 | `PHANTASOS_SD_DIR` | (PATH) | directory holding `sd-server`/`sd-cli` |
 | `PHANTASOS_SD_PORT` | `7860` | local A1111 port `sd-server` listens on |
 | `PHANTASOS_OUT_DIR` | `~/Phantasos` | where renders land |

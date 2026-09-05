@@ -54,8 +54,9 @@ starts from a picture you already have.
 
 ## Knobs
 
-Weights live in `PHANTASOS_MODEL_DIR` (default
-`~/.local/share/phantasos/models`) — the README tables every file and its
+Weights live in the folder on the **Weights:** button (default
+`~/.local/share/phantasos/models`; pick another there, or set
+`PHANTASOS_MODEL_DIR` to override) — the README tables every file and its
 size. `PHANTASOS_SD_DIR` points at `sd-server`/`sd-cli` when they are not on
 PATH, `PHANTASOS_SD_PORT` (default 7860) is the loopback port the resident
 server listens on, and `PHANTASOS_STRENGTH` (default 0.6) is the img2img

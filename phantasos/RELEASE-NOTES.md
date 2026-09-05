@@ -1,0 +1,12 @@
+# Phantasos 0.3.0 — 2026-09-05
+
+- **Weights: <folder>** button: point Phantasos at weights you already have (a shared
+  drive, another machine) instead of downloading 12–68 GB; the status line says what is
+  installed there before you press Fetch. Saved to `~/.config/phantasos/model_dir`;
+  `PHANTASOS_MODEL_DIR` overrides it.
+- The big button is **Create Image**.
+- Fetch shows live progress (`12.4 GB of 27.4 GB (45%)`) and refuses stray arguments.
+- FLUX.2 klein and FLUX.2 dev each keep their own `flux2-vae.safetensors` (two different
+  files with one name used to overwrite each other).
+- Fixed: the Model and Open-in buttons shrank their label after one click.
+- Look: Solarized palette shared by the whole suite, larger text, A+ / A- text scale.

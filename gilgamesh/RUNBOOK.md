@@ -2,7 +2,8 @@
 
 *Photo/prompt → mesh. Tier 2 — needs a real GPU (built and tested on AMD
 Strix Halo, 128 GB unified) and a running trellis.cpp server on `:8080`
-(or wherever `TRELLIS_URL` points). Text prompts additionally need
+(or wherever `TRELLIS_URL` points), started with `--birefnet` so the
+background is removed before reconstruction. Text prompts additionally need
 `phantasos` on `PATH` or `TXT2IMG_CMD`; photos need neither.*
 
 ## Install and launch
@@ -19,6 +20,11 @@ The window opens on the GilgaMESH splash while it loads.
 - **Pick image…** opens a file picker (zenity/kdialog) for a photo. No
   picker installed? Type the path straight into the box next to it — the
   same box also takes a text prompt if `TXT2IMG_CMD` is set.
+- **Rotate 90°** / **Crop to square** fix the picked photo before the
+  run (sideways phone shots, clutter at the edges). Each writes a new PNG
+  into the output dir and points the path box at it — the original is
+  never touched.
+- **A+ / A-** scale the UI text of every Livyatan module (restart to apply).
 - **mm tall** sets the output height in millimeters (default 80).
 - **Make solid** runs the chain and streams each stage live: paint (if a
   prompt), trellis reconstruction, STL scale, watertight remesh. This is
@@ -89,6 +95,10 @@ apply to both the chain's remesh stage and the standalone subcommand.
   reconstruction that came out as fragment soup.
 - **"dropped N bodies" and something looks missing** — rerun with
   `GILGAMESH_DUMP_DROPPED=<dir>` and open the STLs it writes there.
+- **Hundreds of dropped bodies / the mesh is confetti, plus a `[hint]`
+  line** — the server reconstructed the background as well as the object.
+  Restart `trellis-server` with `--birefnet` (background removal); or crop
+  the photo to the object and rerun. README, *Background removal*.
 - **Fails at `[remesh]`** — the remesh is native to the binary; a failure
   here is a bug, not a missing dependency. File it with the input STL.
 - **Model prints lying on its back** — shouldn't happen; the Z-up

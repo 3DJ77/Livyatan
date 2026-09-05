@@ -54,6 +54,9 @@ Camera elevation, degrees; negative looks down at the model. Default \-12.
 .B TRELLIS_URL
 The trellis.cpp server (the reconstruction step; you run it). Default
 http://127.0.0.1:8080; set it when the server is on another host or port.
+Start that server with \fB\-\-birefnet\fR (background removal): without it
+the whole photograph is reconstructed and the remesh drops hundreds of
+loose bodies (the stage log prints a [hint] line when that happens).
 .TP
 .B TRELLIS_OUT
 Output directory for the
