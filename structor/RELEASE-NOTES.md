@@ -22,5 +22,5 @@ First public release.
   saves went to an unwritable directory under a package install; the seed part was a
   2 mm dot on a 300 mm plate; a SpaceMouse fly left HOME / FIT ALL dead.
 
-Known: the 3D environments are greybox — tiles cropped from the old panoramas and plain
-box stand-ins for the machines; proper tiles and modelled props come in the first update.
+Known: the machines in SHOP 3D and SPACE 3D are plain box stand-ins; modelled props come
+in the first update.
