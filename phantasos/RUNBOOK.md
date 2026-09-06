@@ -17,7 +17,7 @@ lists the others) — the README walks all three.
 
 ## The five-minute tour
 
-- Type a prompt, press **Shape**. The status line narrates: first render
+- Type a prompt, press **Create Image**. The status line narrates: first render
   loads the model (minutes — the wait is the load, not a hang), then the
   model stays resident and renders come faster.
 - The render fills the canvas and joins the folio strip on the right;
@@ -29,7 +29,7 @@ lists the others) — the README walks all three.
 
 ## Worked example — and the chain
 
-Shape this:
+Create this:
 
 ```
 a cast-iron wall bracket, scrolled acanthus leaves, straight on,

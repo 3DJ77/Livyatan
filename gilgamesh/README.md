@@ -112,7 +112,7 @@ gilgamesh render IN.stl OUT.png --size 1600x900 --yaw 45 --pitch -20
 - `--pitch D` — camera elevation, degrees; negative looks down at the
   model. Default `-12`.
 
-You get three files: `NAME.glb` (textured, for any 3D program), `NAME.stl`
+You get four files: `NAME.obj`, `NAME.glb` (textured, for any 3D program), `NAME.stl`
 (raw, at your stated size), `NAME-watertight.stl` (the one you slice).
 
 Environment knobs, all optional:
@@ -120,7 +120,7 @@ Environment knobs, all optional:
 | var | default | meaning |
 |---|---|---|
 | `TRELLIS_URL` | `http://127.0.0.1:8080` | where the trellis.cpp server lives |
-| `TRELLIS_OUT` | current directory | where `gilgamesh chain` (the CLI) writes its three files. The window ignores it and uses `GILGAMESH_OUT` (default `~/GilgaMESH`) |
+| `TRELLIS_OUT` | current directory | where `gilgamesh chain` (the CLI) writes its files. The window ignores it and uses `GILGAMESH_OUT` (default `~/GilgaMESH`) |
 | `TXT2IMG_CMD` | unset | any command taking `PROMPT OUT.png` — overrides the words path. Without it, words render through Phantasos (its sibling module) (`phantasos shape`) if it's installed |
 | `GILGAMESH_VOXEL` | `0.35` | (chain path only) remesh resolution in mm — finer keeps more detail, costs time and memory. `gilgamesh remesh` takes voxel/close positionally instead |
 | `GILGAMESH_CLOSE` | `0.8` | (chain path only) closing radius in mm — how big a tunnel gets sealed |
@@ -199,7 +199,7 @@ printable solid — that trade has edges, and you should know them:
   (cabins, fins, panels) in the preview before printing.
 - **Run it twice, get cousins, not twins.** The same input produces very
   slightly different meshes run to run (triangle counts wander a few
-  percent). Every output is watertight and dimensionally faithful; the
+  percent). Outputs are dimensionally faithful; on the server path `NAME-watertight.stl` is the server's mesh (see the release notes on manifold edges); the
   differences live below what a printed part shows. Don't build anything
   on "the same file, byte for byte."
 - **Detail below the resample size washes out.** Fine grooves and sharp

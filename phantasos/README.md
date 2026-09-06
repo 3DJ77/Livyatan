@@ -18,7 +18,8 @@ is a reference, the prompt is the change) instead of a redraw.
 [stable-diffusion.cpp](https://github.com/leejet/stable-diffusion.cpp)'s
 Vulkan build, so it runs on any GPU that backend supports (AMD, Intel,
 NVIDIA) — not tied to one vendor or one machine. Everything runs on the
-box Phantasos is launched on: no network, no remote host, no account.
+box Phantasos is launched on (or a GPU box of yours via the Server button): the only
+network use is the Fetch you press, no account.
 
 Klein (FLUX.2 klein 4B, Q8) is **unmeasured on the ladder** so far — the
 weights are 4.3 GB plus an 8 GB Qwen3-4B text encoder that runs on the

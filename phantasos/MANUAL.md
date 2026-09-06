@@ -12,7 +12,7 @@ phantasos
 
 1. Window opens. Nothing renders until stable-diffusion.cpp and weights are
    in place — see the README for setup.
-2. Type a prompt in the text box. Press **Shape** (the button — Enter commits
+2. Type a prompt in the text box. Press **Create Image** (the button — Enter commits
    the text but does not render).
 3. Status reads `shaping with <model>…`. First render pays the model load;
    after that, renders stay fast until you switch models.
@@ -21,7 +21,8 @@ phantasos
    **swap** cycles to the next installed editor. **Fit** (fit to monitor) opens a
    monitor-sized copy.
 
-Everything runs on the machine Phantasos is launched on — no network, no
+Everything runs on the machine Phantasos is launched on — the only network use is
+Fetch (huggingface.co, when you press it) and the optional Server button — no
 remote host.
 
 ## What it is
@@ -60,7 +61,7 @@ the suite can make them real. Kin in the pantheon:
 - **Fetch** — pulls the selected model's weights from the publisher into the
   Weights folder (same table as `phantasos fetch MODEL`; `phantasos
   models` lists what's installed). Resumable, size-verified, one file at a
-  time, progress in the status line. Shape on an unfetched model fails loud
+  time, progress in the status line. Create Image on an unfetched model fails loud
   with the command to run.
 - **Two execution paths** — the resident model POSTs the **A1111 API**
   (`http://127.0.0.1:<port>/sdapi/v1/txt2img`) to a local `sd-server`
@@ -138,7 +139,7 @@ Phantasos (this machine, this window)
   └─ ~/Pictures/*.png                   render lands on local disk
 ```
 
-Everything is local — no network calls, no remote host, no shared lease
+Everything is local unless you point the Server button at a box of yours — no shared lease
 file. If something else on the machine is also hammering the GPU at the
 same time, that's between you and your driver; Phantasos makes no claim on
 it beyond its own render.

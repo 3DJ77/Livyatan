@@ -22,7 +22,7 @@ for. Measured on real hardware, not guessed:
 ## Quickstart
 
 ```
-sudo apt install ./structor_0.9.0_amd64.deb
+sudo apt install ./structor_0.11.0_amd64.deb
 structor
 ```
 
@@ -54,7 +54,6 @@ rest of the suite picks up module by module.
 - **`.stl`** — watertight export (import too). The boolean engine is
   manifold — the same backend OpenSCAD uses — so the preview IS the
   export.
-- **`.obj`** — export for tools that prefer it.
 
 ## Config
 

@@ -3,8 +3,8 @@
 ## Quickstart
 
 ```
-tools/release-build.sh   # cargo build --release, operator home remapped out of the binary
-target/release/structor
+sudo apt install ./structor_0.11.0_amd64.deb
+structor
 ```
 
 Click a palette button (top-left) — BOX / SPHERE / CYLINDER / WEDGE / PYRAMID — to
@@ -28,7 +28,7 @@ The scene is a tree of shapes that maps 1:1 onto a JSON-CSG grammar, so a saved
 the manifold engine — the same backend OpenSCAD uses — so what you preview is what
 the export produces.
 
-The binary is `target/release/structor`. 85 in-crate tests (`cargo test`); the
+The installed binary is `/usr/bin/structor`. 85 in-crate tests (`cargo test`); the
 camera/spacemouse canon tests live in the vendored chimaera crate.
 
 ## Why the name
