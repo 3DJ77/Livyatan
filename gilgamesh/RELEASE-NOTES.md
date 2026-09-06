@@ -1,8 +1,9 @@
 # GilgaMESH 0.2.0 — 2026-09-05
 
-- Every button has a hover tooltip. When the reconstruction server already returns a
-  watertight mesh, `NAME-watertight.stl` is written as-is: the native remesh only ran on
-  closed meshes to add rays and holes.
+- Top bar in three rounded panes on one row (paper | rock | text size), 1600-wide window.
+  Every button has a hover tooltip. On the server path
+  `NAME-watertight.stl` is the server's mesh as-is: the native remesh only added rays and
+  holes to it (`GILGAMESH_FORCE_REMESH=1` runs it anyway).
 - Docs now say the thing that decides model vs confetti: start `trellis-server` with
   `--birefnet` (background removal). Same photo measured: 1,760 loose bodies without it,
   51 with. The stage log prints a `[hint]` line when the remesh drops hundreds of bodies.

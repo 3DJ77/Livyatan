@@ -78,6 +78,9 @@ pin or re-roll.
 Reconstruction resolution (512, 1024, 1536) passed to the server when its
 build supports it. Unset: the server's own default.
 .TP
+.B GILGAMESH_FORCE_REMESH
+Run the native watertight remesh on a server mesh too (off: the server\'s mesh is the sliceable one).
+.TP
 .B GILGAMESH_VOXEL, GILGAMESH_CLOSE
 Chain-path remesh voxel size / closing radius in mm, defaults 0.35 / 0.8
 (the remesh subcommand takes these positionally instead).

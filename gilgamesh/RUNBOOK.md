@@ -27,7 +27,7 @@ The window opens on the GilgaMESH splash while it loads.
 - **A+ / A-** scale the UI text of every Livyatan module (restart to apply).
 - **mm tall** sets the output height in millimeters (default 80).
 - **Make solid** runs the chain and streams each stage live: paint (if a
-  prompt), trellis reconstruction, STL scale, watertight remesh (skipped, and the raw STL copied, when the server's mesh is already watertight — the native pass only degrades a closed mesh). This is
+  prompt), trellis reconstruction, STL scale, watertight remesh (on the server path the raw STL is copied to `-watertight.stl` as-is — the native pass only degraded the server's closed meshes; `GILGAMESH_FORCE_REMESH=1` runs it anyway; the prompt / light paths still remesh). This is
   minutes, not seconds — the splash and stage log are there so a long run
   never reads as a crash.
 - Output lands in `~/GilgaMESH` (override with `GILGAMESH_OUT`): the

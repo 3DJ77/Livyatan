@@ -2,6 +2,7 @@
 
 First public release.
 
+- Text + / Text − buttons resize the suite text (restart to apply).
 - Save / Open / Recent on the toolbar (`.SigN`, default folder `~/Structor`); autosave
   once a minute to `~/Structor/autosave.SigN`; the title bar shows the file and a `*`
   while unsaved; closing with unsaved changes writes the autosave and asks to save.
