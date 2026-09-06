@@ -18,7 +18,7 @@ phantasos
    after that, renders stay fast until you switch models.
 4. The render fills the **canvas** and joins the **folio** strip on the right.
 5. **Open in gimp** (or whatever's current) hands the full-res PNG to an editor;
-   **swap** cycles to the next installed editor. **Fit to monitor** opens a
+   **swap** cycles to the next installed editor. **Fit** (fit to monitor) opens a
    monitor-sized copy.
 
 Everything runs on the machine Phantasos is launched on — no network, no
@@ -72,7 +72,7 @@ the suite can make them real. Kin in the pantheon:
   `~/.config/phantasos/editor`.
 - **A+ / A-** — UI text scale for every Livyatan module (saved to
   `~/.config/livyatan/ui-scale`; restart to apply).
-- **Fit to monitor** — native Lanczos resize to the monitor the window is
+- **Fit** (fit to monitor) — native Lanczos resize to the monitor the window is
   on (up or down), then opens the copy in the editor.
 
 | var | default | what |

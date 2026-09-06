@@ -54,9 +54,10 @@ starts from a picture you already have.
 
 ## The window
 
-Top bar in three panes, Structor's layout: FILE (Save as…, Export…, Pick image…, Open
-in gimp, swap), BUILD (Create Image, Model, Fetch), NAV/UI (Weights, Server, Fit to
-monitor, A+/A-). Under it the status line with an hourglass that turns while a render or
+Top bar, one button high, in three panes across the window (Structor's layout): FILE
+(Save as…, Export…, Pick image…, Open in gimp, swap), BUILD (Create Image, Model,
+Fetch), NAV/UI (Weights…, Server, Fit, A+/A-). The weights folder in force
+shows in the status line. Under it the status line with an hourglass that turns while a render or
 a fetch is in flight. Prompt column on the left — multi-line, wraps, scrolls, Enter is a
 newline; the picture and its folio on the right. **Save as…** writes the PNG as rendered
 through the system file dialog (zenity, default `~/Pictures`); **Export…** re-encodes by
