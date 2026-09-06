@@ -1,5 +1,6 @@
 # Phantasos 0.3.0 — 2026-09-05
 
+- Every button has a hover tooltip.
 - First run finds a shared weights store (`<mount>/models/image` or `~/models/image`)
   instead of offering to download weights the machine already has; if there is none, it
   asks which models to download and fetches them.
