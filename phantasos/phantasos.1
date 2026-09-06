@@ -37,7 +37,14 @@ Directory holding sd-server/sd-cli when not on PATH.
 .TP
 .B PHANTASOS_MODEL_DIR
 Model weights. Overrides the folder picked with the Weights button
-(~/.config/phantasos/model_dir); default ~/.local/share/phantasos/models.
+(~/.config/phantasos/model_dir). With neither set, the first run looks for
+~/models/image or <mount>/models/image holding a known weight file and
+remembers it; default ~/.local/share/phantasos/models. With no model
+installed anywhere it looked, the window asks which models to download.
+.TP
+.B DROP_QA
+In-process QA script (drop-fyrox); inert when unset. Suppresses the
+first-run download dialog.
 
 .TP
 .B PHANTASOS_OUT_DIR
