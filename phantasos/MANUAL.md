@@ -39,9 +39,7 @@ No web tech. No Python UI. One binary, one window, your own GPU.
 Phantasos is one of the Oneiroi, brother of Morpheus — the dream-spirit
 whose specific gift was dreams of *inanimate objects*: stone, wood, water,
 the shapes of things. This module dreams pictures of objects so the rest of
-the suite can make them real. Kin in the pantheon:
-
-- **Galatea** — reserved for the video layer (still → motion), later.
+the suite can make them real.
 
 ## Features
 
@@ -117,8 +115,10 @@ Same pipeline as the window, same recipe table, prints the output path.
 
 ## Using it
 
-- **Render**: pick a model, type, Shape. Status line tells you what's happening;
-  there's no progress bar yet — "shaping…" then the image lands.
+- **Render**: pick a model, type, Create Image. The status line says what is
+  happening and the hourglass in the picture area drains at the pace of the last
+  render of that model on that server (learned per run; it turns over if a render
+  runs long).
 - **Cold start**: first render after Phantasos starts or a model switch blocks
   while it loads the model (idempotent — a no-op if that model is already
   resident, otherwise it kills the old server, starts the new one, and waits
@@ -144,8 +144,7 @@ file. If something else on the machine is also hammering the GPU at the
 same time, that's between you and your driver; Phantasos makes no claim on
 it beyond its own render.
 
-Siblings: **Kish** (reports) is the text half of the release pipeline;
-**Galatea** (video) is reserved.
+Sibling: **Kish** (reports) is the text half of the release pipeline.
 
 ## Known limits
 
@@ -160,7 +159,6 @@ Siblings: **Kish** (reports) is the text half of the release pipeline;
   pays the full model load from disk. Not persisted across a Phantasos
   restart — every fresh launch reloads on first render.
 - **No negative prompt, no seed control** — seed is `-1` (random) today.
-- **No progress bar** — status text only.
 - **Chroma1-HD and FLUX.1 dev aren't offered** — both weave a cross-hatch
   artifact on constrained-VRAM Vulkan paths across every knob tried. Do not
   re-wire without an upstream fix.
@@ -169,5 +167,3 @@ Siblings: **Kish** (reports) is the text half of the release pipeline;
 
 - Steps control and a size row in the prompt row (`--size` exists headless).
 - Seed field for reproducibility; negative prompt.
-- Progress feedback during long shapes.
-- **Galatea** — sd-cli has `-M vid_gen`; the still→motion layer.

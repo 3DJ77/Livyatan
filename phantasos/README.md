@@ -152,7 +152,8 @@ artifact on constrained-VRAM Vulkan paths across every setting tried.
   headless, `phantasos shape --size PX` takes 256..4096 (square only).
 - No negative prompt; no seed field in the window — window renders are
   random-seed (headless `phantasos shape --seed` is reproducible).
-- No progress bar — status text only ("shaping…" then the image lands).
+- Render progress is the hourglass: paced to the last render of that model, not a
+  true percentage from the server.
 - First render after a fresh start or a model switch pays the full model
   load; after that, renders stay fast until you switch models again.
 
