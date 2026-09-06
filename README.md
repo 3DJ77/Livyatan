@@ -28,6 +28,13 @@ Debian 13 (trixie), amd64. Tested on: an 8 GB NVIDIA T1000 workstation
 card, a Strix Halo with 128 GB unified memory, and a no-GPU desktop for the
 window and CLI paths — the per-module README states what needs a GPU.
 
-These are early cuts — 0.1 and 0.2 releases from one person's bench.
+These are early cuts from one person's bench. GilgaMESH ships as a working test
+prototype; its release notes say plainly what works and what does not.
+
+## Reporting
+
+Something broke, or installed wrong, or the manual lied? Open an issue on this
+repository with the module, its version (`<module> --version`), your Debian/Ubuntu
+version and GPU, and what you did. Screenshots help. Every report gets read.
 
 The wall: https://3dj77.github.io
