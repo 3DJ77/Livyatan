@@ -61,7 +61,11 @@ for a store that already holds a known weight file — `~/models/image` or
 first launch asks which models to download (Klein ticked) and fetches them with the
 same progress line as the Fetch button; Cancel leaves it to the Fetch button. Pick
 another folder on the Weights button, or set `PHANTASOS_MODEL_DIR` to override — the README tables every file and its
-size. `PHANTASOS_SD_DIR` points at `sd-server`/`sd-cli` when they are not on
+size. **Server:** renders load the model on this machine unless the Server button
+names a running sd-server (`host:port`, e.g. a GPU box on the LAN started with
+`sd-server … --listen-ip 0.0.0.0`); then nothing loads here, no local weights are
+needed, and that server renders with whatever model it has loaded.
+`PHANTASOS_SD_SERVER` overrides the button. `PHANTASOS_SD_DIR` points at `sd-server`/`sd-cli` when they are not on
 PATH, `PHANTASOS_SD_PORT` (default 7860) is the loopback port the resident
 server listens on, and `PHANTASOS_STRENGTH` (default 0.6) is the img2img
 denoise for `--from` on Schnell and FLUX.2 dev.

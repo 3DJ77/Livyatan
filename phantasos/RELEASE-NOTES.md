@@ -3,6 +3,8 @@
 - First run finds a shared weights store (`<mount>/models/image` or `~/models/image`)
   instead of offering to download weights the machine already has; if there is none, it
   asks which models to download and fetches them.
+- Server button: render on an sd-server elsewhere on the LAN (`host:port`) instead of
+  loading a model on this machine.
 - **Weights: <folder>** button: point Phantasos at weights you already have (a shared
   drive, another machine) instead of downloading 12–68 GB; the status line says what is
   installed there before you press Fetch. Saved to `~/.config/phantasos/model_dir`;

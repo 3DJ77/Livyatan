@@ -64,7 +64,9 @@ own machine.
    `flux2-klein/`, `flux/`, `flux2/`). **Already have the files** — on a
    shared drive, from another box? If it is mounted as `<mount>/models/image`
    (or `~/models/image`) Phantasos finds it on first run; with nothing installed it asks
-   which models to download. Otherwise press **Weights: …**, pick that folder,
+   which models to download. Otherwise press **Weights: …**, pick that folder. Have a
+   GPU box on the LAN already running sd-server? Press **Server: …** and give it
+   `host:port` — this machine then loads nothing,
    and the status line says what is installed there before you fetch
    anything. The choice is saved to `~/.config/phantasos/model_dir`;
    `PHANTASOS_MODEL_DIR` in the environment overrides it.
