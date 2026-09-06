@@ -96,12 +96,12 @@ parts for a real shop takes the builder's name, not the architect's.
 - **PLATE clear keeps the grid** (2026-09-05): the grid is its own lines-only sheet
   when the plate is hidden. HOME and FIT ALL always return the camera from a
   SpaceMouse fly to orbit (the "zoom won't re-lock" report).
-- **Backdrop system** — the July-2026 skydome: an equirect panorama on a sphere
-  around the plate (radius 700 × world scale), self-lit, the ground slab hidden
-  while a wallpaper is up. Where the sphere sits relative to the plate is the
-  operator's placement (MAGIC CARPET / BG LEVEL above); the shipped defaults are
-  the numbers placed by the author on 2026-09-05.
-- **A+ / A-** — UI text scale for every Livyatan module, saved to
+- **Photo domes** — SHOP / HILLS / SPACE in the VIEW menu are the older
+  backdrops: an equirect panorama on a sphere around the plate, self-lit, the
+  ground slab hidden while one is up. Where the sphere sits relative to the
+  plate is the operator's placement (MAGIC CARPET / BG LEVEL below); the shipped
+  defaults are the numbers placed by the author on 2026-09-05.
+- **Text + / Text −** — UI text scale for every Livyatan module, saved to
   `~/.config/livyatan/ui-scale`; restart to apply.
 - **The backdrop is a level, the plate is the ship (2026-09-05).** The backdrop
   sphere has a full placement — position and yaw/pitch/roll — around the plate.
@@ -241,7 +241,7 @@ binary never consults them.
 ## Shop export (2026-08-31)
 
 The model is truth: dimensioned drawings and machine cut files come FROM the
-scene (SHOP-EXPORT-DESIGN.md; first customer = the WHIPS gasifier).
+scene (the shop-export design note; first customer = the WHIPS gasifier).
 
 - **F** cycles the selection's Pro-Tag: untagged → FLAT → ROLLED → CNC →
   PRINT → CAST → STOCK. The tag names the toolchain, not the geometry:
