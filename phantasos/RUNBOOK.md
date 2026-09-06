@@ -60,7 +60,7 @@ Top bar, one button high, in three panes across the window (Structor's layout): 
 Fetch), NAV/UI (Weights…, Server, Fit, A+/A-). The weights folder in force
 shows in the status line. While a model loads or a render runs, the picture area shows a blown-glass hourglass
 with real falling sand: a cellular automaton (each grain falls, slides or rolls; the crater,
-the stream and the heap follow), paced so the top empties in the time the last render of
+the stream and the heap follow) wearing the render's own sand pixels, paced so the top empties in the time the last render of
 that model on that server took (`~/.config/phantasos/timing.json`, learned per run) or, for
 a fetch, by its reported bytes. Past the expected time the glass turns over and drains again.
 
