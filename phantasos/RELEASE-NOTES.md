@@ -4,9 +4,9 @@
   instead of offering to download weights the machine already has; if there is none, it
   asks which models to download and fetches them.
 - Window: top bar in three rounded panes (file / build / nav-ui, Structor's layout), prompt
-  column on the left (multi-line, wraps, scrolls), picture on the right; a blown-glass hourglass
-  fills the picture area while a render or fetch runs, its sand draining at the pace of
-  the last render of that model (learned per run); Save as… / Export… through the system file dialog.
+  column on the left (multi-line, wraps, scrolls), picture on the right; a blown-glass hourglass with
+  simulated falling sand fills the picture area while a render or fetch runs, paced to the
+  last render of that model (learned per run), turning over if it runs long; Save as… / Export… through the system file dialog.
 - Images land in `~/Pictures`; Folder… on the bar picks another and remembers it.
 - Server button: render on an sd-server elsewhere on the LAN (`host:port`) instead of
   loading a model on this machine.

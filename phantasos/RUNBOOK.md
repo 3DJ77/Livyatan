@@ -59,13 +59,10 @@ Top bar, one button high, in three panes across the window (Structor's layout): 
 (Folder…, Save as…, Export…, Pick image…, Open in gimp, swap), BUILD (Create Image, Model,
 Fetch), NAV/UI (Weights…, Server, Fit, A+/A-). The weights folder in force
 shows in the status line. While a model loads or a render runs, the picture area shows a blown-glass hourglass
-whose sand drains at the real pace: a fetch reports its bytes; a render runs against the
-time the last render of that model on that server took (`~/.config/phantasos/timing.json`,
-learned per run — the first run of a model uses a guess). If the work runs past the expected time the glass
-turns over and drains again, so it keeps moving until the picture lands. Prompt column on the left — multi-line, wraps, scrolls, Enter is a
-newline; the picture and its folio on the right. **Save as…** writes the PNG as rendered
-through the system file dialog (zenity, default `~/Pictures`); **Export…** re-encodes by
-the extension you give it (png / jpg / bmp / tiff).
+with real falling sand: a cellular automaton (each grain falls, slides or rolls; the crater,
+the stream and the heap follow), paced so the top empties in the time the last render of
+that model on that server took (`~/.config/phantasos/timing.json`, learned per run) or, for
+a fetch, by its reported bytes. Past the expected time the glass turns over and drains again.
 
 ## Knobs
 
