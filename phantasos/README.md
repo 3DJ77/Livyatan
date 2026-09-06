@@ -62,7 +62,9 @@ own machine.
    Weights land in the **Weights** folder shown on the button under the
    model picker (default `~/.local/share/phantasos/models`, under
    `flux2-klein/`, `flux/`, `flux2/`). **Already have the files** — on a
-   shared drive, from another box? Press **Weights: …**, pick that folder,
+   shared drive, from another box? If it is mounted as `<mount>/models/image`
+   (or `~/models/image`) Phantasos finds it on first run; with nothing installed it asks
+   which models to download. Otherwise press **Weights: …**, pick that folder,
    and the status line says what is installed there before you fetch
    anything. The choice is saved to `~/.config/phantasos/model_dir`;
    `PHANTASOS_MODEL_DIR` in the environment overrides it.

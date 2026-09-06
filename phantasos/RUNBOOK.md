@@ -54,9 +54,13 @@ starts from a picture you already have.
 
 ## Knobs
 
-Weights live in the folder on the **Weights:** button (default
-`~/.local/share/phantasos/models`; pick another there, or set
-`PHANTASOS_MODEL_DIR` to override) — the README tables every file and its
+Weights live in the folder on the **Weights:** button. On first run Phantasos looks
+for a store that already holds a known weight file — `~/models/image` or
+`<any mount>/models/image` — and remembers it; otherwise the default is
+`~/.local/share/phantasos/models`. If no model is installed anywhere it looked, the
+first launch asks which models to download (Klein ticked) and fetches them with the
+same progress line as the Fetch button; Cancel leaves it to the Fetch button. Pick
+another folder on the Weights button, or set `PHANTASOS_MODEL_DIR` to override — the README tables every file and its
 size. `PHANTASOS_SD_DIR` points at `sd-server`/`sd-cli` when they are not on
 PATH, `PHANTASOS_SD_PORT` (default 7860) is the loopback port the resident
 server listens on, and `PHANTASOS_STRENGTH` (default 0.6) is the img2img
