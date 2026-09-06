@@ -17,7 +17,7 @@ both through the file dialog, default folder `~/Structor`.
 ## What it is
 
 Structor is the design module of the Livyatan Design Suite: a sovereign,
-local-first CAD program in Rust on fyrox. It is a TinkerCAD replacement — drop
+local-first CAD program in Rust on fyrox. It is an alternative to online cloud-based CAD platforms — drop
 primitive solids on a build plate, drag/rotate/scale them with gizmos, mark
 negatives as holes, group and boolean-merge, then export the resolved solid
 to a watertight STL. No browser, no cloud, no account, no network.

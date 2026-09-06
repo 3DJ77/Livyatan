@@ -68,7 +68,7 @@ programs.
 
 ## Known limitations
 
-- Primitive-solid modeling (the TinkerCAD idiom): no sketch-and-extrude,
+- Primitive-solid modeling (drag primitives, mark holes, merge): no sketch-and-extrude,
   no fillets on arbitrary edges — the shape vocabulary is the palette.
 - STL import renders as-is; imported meshes join booleans but are not
   parametrically editable.
