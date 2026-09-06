@@ -23,7 +23,8 @@ lists the others) — the README walks all three.
 - The render fills the canvas and joins the folio strip on the right;
   click a thumbnail to bring one back.
 - **Open in gimp** hands the full-res PNG to an editor; **swap** cycles
-  editors. Renders land in `~/Phantasos` (override `PHANTASOS_OUT_DIR`).
+  editors. Renders land in `~/Pictures` by default; **Folder…** on the bar picks another
+  (remembered in `~/.config/phantasos/out_dir`); `PHANTASOS_OUT_DIR` overrides both.
 - Closing the window shuts the resident server down and frees the GPU.
 
 ## Worked example — and the chain
@@ -55,7 +56,7 @@ starts from a picture you already have.
 ## The window
 
 Top bar, one button high, in three panes across the window (Structor's layout): FILE
-(Save as…, Export…, Pick image…, Open in gimp, swap), BUILD (Create Image, Model,
+(Folder…, Save as…, Export…, Pick image…, Open in gimp, swap), BUILD (Create Image, Model,
 Fetch), NAV/UI (Weights…, Server, Fit, A+/A-). The weights folder in force
 shows in the status line. Under it the status line with an hourglass that turns while a render or
 a fetch is in flight. Prompt column on the left — multi-line, wraps, scrolls, Enter is a

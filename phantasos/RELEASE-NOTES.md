@@ -6,6 +6,7 @@
 - Window: top bar in three rounded panes (file / build / nav-ui, Structor's layout), prompt
   column on the left (multi-line, wraps, scrolls), picture on the right; an hourglass turns
   while a render or fetch runs; Save as… / Export… through the system file dialog.
+- Images land in `~/Pictures`; Folder… on the bar picks another and remembers it.
 - Server button: render on an sd-server elsewhere on the LAN (`host:port`) instead of
   loading a model on this machine.
 - **Weights: <folder>** button: point Phantasos at weights you already have (a shared

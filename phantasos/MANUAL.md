@@ -81,7 +81,7 @@ the suite can make them real. Kin in the pantheon:
 | `LIVYATAN_THEME` | `livyatan` | comparison knob: `tokyo-night` / `gruvbox` / `catppuccin` palettes for screenshots |
 | `PHANTASOS_SD_DIR` | (PATH) | directory holding `sd-server`/`sd-cli` |
 | `PHANTASOS_SD_PORT` | `7860` | local A1111 port `sd-server` listens on |
-| `PHANTASOS_OUT_DIR` | `~/Phantasos` | where renders land |
+| `PHANTASOS_OUT_DIR` | `~/Pictures` (or the Folder… pick) | where renders land |
 | `PHANTASOS_STRENGTH` | `0.6` | img2img denoise for `--from` on Schnell / FLUX.2 dev (0.0 exclusive to 1.0; klein's reference lane ignores it) |
 
 Model file paths and per-model flags live in `model_args()` in `src/main.rs` —
@@ -126,7 +126,7 @@ Same pipeline as the window, same recipe table, prints the output path.
   the next Shape.
 - **Revisit**: click any folio thumbnail — canvas swaps back, Open/Fit act on it.
 - **Files**: everything is a plain PNG in `PHANTASOS_OUT_DIR` (default
-  `~/Phantasos`).
+  `~/Pictures`, or the folder picked with Folder…).
 
 ## How it connects
 
@@ -135,7 +135,7 @@ Phantasos (this machine, this window)
   ├─ ensure_server(key)               make the model resident (no-op if warm)
   │     └─ sd-server                  local process, one model resident
   ├─ curl 127.0.0.1:<port>            A1111 txt2img, local loopback only
-  └─ ~/Phantasos/*.png                 render lands on local disk
+  └─ ~/Pictures/*.png                   render lands on local disk
 ```
 
 Everything is local — no network calls, no remote host, no shared lease
