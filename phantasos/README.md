@@ -2,6 +2,9 @@
 
 Current release: 0.3.0
 
+Top bar in three panes (file / build / nav), prompt column on the left, picture on
+the right; **Save as…** and **Export…** go through the system file dialog.
+
 ![Phantasos — the window](assets/screenshot.png)
 
 **AI image generation, fully local. Type a prompt, get a render — on

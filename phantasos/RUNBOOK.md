@@ -52,6 +52,16 @@ reproducible, `--size PX` sets the square edge (256..4096, default 1024,
 CLI only), `--model NAME` picks klein/schnell/flux2dev and `--from IMAGE`
 starts from a picture you already have.
 
+## The window
+
+Top bar in three panes, Structor's layout: FILE (Save as…, Export…, Pick image…, Open
+in gimp, swap), BUILD (Create Image, Model, Fetch), NAV/UI (Weights, Server, Fit to
+monitor, A+/A-). Under it the status line with an hourglass that turns while a render or
+a fetch is in flight. Prompt column on the left — multi-line, wraps, scrolls, Enter is a
+newline; the picture and its folio on the right. **Save as…** writes the PNG as rendered
+through the system file dialog (zenity, default `~/Pictures`); **Export…** re-encodes by
+the extension you give it (png / jpg / bmp / tiff).
+
 ## Knobs
 
 Weights live in the folder on the **Weights:** button. On first run Phantasos looks
