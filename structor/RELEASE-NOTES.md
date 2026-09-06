@@ -12,8 +12,9 @@ First public release.
 - Top bar in three panes: file, build, view. Hover any button for its shortcut. Size
   inspector and parts list on the right. Every shape on the palette with a rendered icon.
 - Look: Solarized palette shared by the whole suite; A+ / A- text scale for every module.
-- Environment: the plate sits on the floor of a modelled space — SHOP 3D (a 30 m shop
-  bay, the launch view), HILLS 3D (open ground), SPACE 3D (a station bay) — so the view
+- Environment: the plate sits in a modelled space — SHOP 3D (a 30 m shop bay, the launch
+  view: the build plate lies on a granite surface-plate inspection bench mid floor, a
+  bridge crane rides under the trusses), HILLS 3D (open ground), SPACE 3D (a station bay) — so the view
   keeps true perspective from any angle. The older SHOP / HILLS / SPACE photo domes stay
   in VIEW. The operator places the environment around the plate with the SpaceMouse
   (MAGIC CARPET in the DEBUG pane) or VIEW > BG LEVEL; the placement is kept per
