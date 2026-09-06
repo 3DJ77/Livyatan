@@ -100,7 +100,7 @@ parts for a real shop takes the builder's name, not the architect's.
   around the plate (radius 700 × world scale), self-lit, the ground slab hidden
   while a wallpaper is up. Where the sphere sits relative to the plate is the
   operator's placement (MAGIC CARPET / BG LEVEL above); the shipped defaults are
-  the numbers Jay placed on 2026-09-05.
+  the numbers placed by the author on 2026-09-05.
 - **A+ / A-** — UI text scale for every Livyatan module, saved to
   `~/.config/livyatan/ui-scale`; restart to apply.
 - **The backdrop is a level, the plate is the ship (2026-09-05).** The backdrop
