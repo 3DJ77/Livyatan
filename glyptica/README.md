@@ -10,6 +10,9 @@ a laser or plasma cutter, and a relief slab STL in the artwork's own
 shape, ready to print or to boolean onto any part in Structor. Named for
 glyptics, the old art of carving figures into stone.
 
+The window sizes itself to the screen it opens on (a 4K monitor gets a
+larger UI); `~/.config/livyatan/ui-scale`, if present, overrides that.
+
 ## Tier
 
 **Tier 1 — any Debian box** with a display. No GPU, no network, no

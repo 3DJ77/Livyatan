@@ -1,6 +1,6 @@
-# Nazca 0.1.0 — 2026-09-12
+# Nazca 0.1.1 — 2026-09-12
 
-First public release. The viewer: walk the lines before the machine does.
+First public release; 0.1.1 sizes the window and text to the monitor it opens on (0.1.0 came up tiny on 4K). The viewer: walk the lines before the machine does.
 
 - Loads G-code (`.nc .gcode .ngc .tap`) and sliced resin `.ctb`. It reads; it never
   writes, never sends, never talks to a controller.

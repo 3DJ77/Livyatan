@@ -21,6 +21,9 @@ camera the way the print will grow; **2D layer** goes back to the mask.
 **Play**, in the corner where the two meet, runs the active scrubber to
 the end in about twenty seconds; Stop halts it.
 
+The window sizes itself to the screen it opens on (a 4K monitor gets a
+larger UI); `~/.config/livyatan/ui-scale`, if present, overrides that.
+
 ## Tier
 
 **Tier 1 — any Debian box** with a display. No network, no accounts,

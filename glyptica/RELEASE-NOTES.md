@@ -1,6 +1,6 @@
-# Glyptica 0.1.0 — 2026-09-12
+# Glyptica 0.1.1 — 2026-09-12
 
-First public release. Glyphs into matter: artwork in, cut linework and carved relief out.
+First public release; 0.1.1 sizes the window and text to the monitor it opens on (0.1.0 came up tiny on 4K). Glyphs into matter: artwork in, cut linework and carved relief out.
 
 - One window, the whole chain: **Open artwork…** takes a phone photo of a page, a scan,
   a clean PNG, an SVG, or a DXF. A photograph is thresholded into linework on open.
