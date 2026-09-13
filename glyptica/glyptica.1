@@ -1,0 +1,44 @@
+.TH GLYPTICA 1 "2026" "Livyatan Design Suite" "User Commands"
+.SH NAME
+glyptica \- artwork to cut linework and carved relief
+.SH SYNOPSIS
+.B glyptica
+[\fIART.png\fR|\fI.jpg\fR|\fI.svg\fR|\fI.dxf\fR]
+.br
+.B glyptica rectify
+\fIIN OUT\fR \fB\-\-quad\fR \fIx1,y1,...,x4,y4\fR [\fB\-\-size\fR \fIWxH\fR] [\fB\-\-vstretch\fR \fIS\fR]
+.br
+.B glyptica adjust
+\fIIN OUT\fR [\fB\-\-gamma\fR \fIG\fR] [\fB\-\-levels\fR \fIlo,hi\fR]
+.br
+.B glyptica extract
+\fIIN.png OUT-mask.png\fR [\fB\-\-min\-area\fR \fIN\fR] [\fB\-\-invert\fR] [\fB\-\-crop\fR \fIx,y,w,h\fR]
+.br
+.B glyptica refine
+\fIIN OUT\fR [\fB\-\-dilate\fR \fIN\fR] [\fB\-\-erode\fR \fIN\fR] [\fB\-\-close\fR \fIN\fR] [\fB\-\-min\-area\fR \fIN\fR]
+.br
+.B glyptica trace
+\fIMASK.png OUT.svg\fR [\fB\-\-speckle\fR \fIN\fR]
+.br
+.B glyptica place
+\fIMASK PREVIEW.png\fR [\fB\-\-offset\fR \fIdx,dy\fR] [\fB\-\-scale\fR \fIsx,sy\fR] [\fB\-\-shear\fR \fIs\fR]
+.br
+.B glyptica emboss
+\fIMASK OUT.stl\fR [\fB\-\-mm\fR \fIH\fR] [\fB\-\-thick\fR \fIT\fR] [\fB\-\-depth\fR \fID\fR] [\fB\-\-raise\fR] [\fB\-\-offset\fR \fIdx,dy\fR] [\fB\-\-scale\fR \fIsx,sy\fR] [\fB\-\-shear\fR \fIs\fR]
+.SH DESCRIPTION
+Glyphs into matter. rectify un-warps a hand-held photo (read the page
+corners off any viewer); extract pulls a clean stroke mask through an
+adaptive threshold; trace vectorizes it for a laser; emboss carves it into
+a relief slab in the art's own shape. Bare invocation opens the window, which runs the whole chain: open a
+photograph, flatten it by clicking four page corners, threshold, clean,
+place, then export SVG linework or a relief slab STL.
+adjust lifts a dim photo (gamma, black/white levels) before extract;
+refine grows, thins, or closes strokes; place renders a PNG preview of the
+placement flags emboss will use.
+emboss cuts the strokes in (intaglio) unless \-\-raise, which stands them
+proud (emboss). Output is one closed solid: print it, or boolean it onto a part in
+structor.
+.SH SEE ALSO
+.BR gilgamesh (1),
+.BR hephaestus (1),
+.BR livyatan (7).

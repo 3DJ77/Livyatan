@@ -1,0 +1,17 @@
+.TH NAZCA 1 "2026" "Livyatan Design Suite" "User Commands"
+.SH NAME
+nazca \- toolpath and slice-file viewer
+.SH SYNOPSIS
+.B nazca
+[\fIFILE\fR]
+.SH DESCRIPTION
+Walk the lines before the machine does. Loads G-code (.nc, .gcode, .ngc,
+\&.tap) and draws every move in 3D, colored by class for the machine the file is for; loads unencrypted ChiTu
+\&.ctb and shows layers, heights, exposure, and the preview. It reads and
+never writes. An encrypted v5 .ctb is refused with a clear message rather
+than decoded wrong. G-code coverage is G0\(enG3 with arcs; files leaning
+on G92 offsets or G91 incremental mode will not preview true.
+.SH SEE ALSO
+.BR hephaestus (1),
+.BR jove (1),
+.BR livyatan (7).
