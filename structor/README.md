@@ -17,12 +17,12 @@ for. Measured on real hardware, not guessed:
 | GTX 1650 desktop | low | ~1.1 s (software rendering) |
 | Strix Halo 128GB | high | runs; instant |
 
-![Structor — a box on the plate in the SHOP 3D bay](assets/screenshot.png)
+![Structor — a box on the build plate, gizmos live](assets/screenshot.png)
 
 ## Quickstart
 
 ```
-sudo apt install ./structor_0.11.0_amd64.deb
+sudo apt install ./structor_0.9.0_amd64.deb
 structor
 ```
 
@@ -40,8 +40,7 @@ work on what is behind them; **SHOW ALL** brings them back. The parts list
 under the palette hides and selects by name, **REST** drops a part onto the
 plate, **FIT ALL** frames everything, **MEASURE** reads a distance, and
 new parts arrive at one inch with the keyboard already in their size fields.
-Hover any toolbar button for its keyboard chord; **A+ / A-** scale the text of
-every Livyatan module.
+Hover any toolbar button for its keyboard chord. The UI sizes itself to the screen it opens on (a 4K monitor gets a larger UI); a saved `~/.config/livyatan/ui-scale` overrides that.
 
 `RUNBOOK.md` walks a complete worked example — a wall bracket that the
 rest of the suite picks up module by module.
@@ -54,6 +53,7 @@ rest of the suite picks up module by module.
 - **`.stl`** — watertight export (import too). The boolean engine is
   manifold — the same backend OpenSCAD uses — so the preview IS the
   export.
+- **`.obj`** — export for tools that prefer it.
 
 ## Config
 
@@ -68,7 +68,7 @@ programs.
 
 ## Known limitations
 
-- Primitive-solid modeling (drag primitives, mark holes, merge): no sketch-and-extrude,
+- Primitive-solid modeling (the TinkerCAD idiom): no sketch-and-extrude,
   no fillets on arbitrary edges — the shape vocabulary is the palette.
 - STL import renders as-is; imported meshes join booleans but are not
   parametrically editable.

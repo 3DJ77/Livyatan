@@ -9,13 +9,13 @@ sudo apt install ./structor_<version>_amd64.deb
 structor
 ```
 
-The window opens on the build plate lying on the inspection bench in SHOP 3D (VIEW picks the other environments).
+The window opens on an empty build plate under a night sky.
 
 ## The ten-minute tour
 
 - **Drop a solid**: click a palette button (top-left) — thirteen
   primitives from BOX to GEAR (set teeth and module first for a gear).
-  It lands on the plate; the SELECTED panel at the top right shows its
+  It lands on the plate; the SELECTED panel below the palette shows its
   exact position, rotation, and size for numeric entry.
 - **Move it**: left-drag the solid. It slides on the plate and snaps to
   the grid; corners and face-centers catch on other parts' feature
@@ -61,6 +61,7 @@ Keep both files. Next module's runbook starts from `bracket.stl`.
 |---|---|---|
 | `.SigN` | open + save | the scene tree as readable JSON-CSG |
 | `.stl` | import + export | meshes in, watertight resolved solid out |
+| `.obj` | export | same solid for tools that prefer OBJ |
 
 ## Developer knobs
 

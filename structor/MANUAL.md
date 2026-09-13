@@ -3,8 +3,8 @@
 ## Quickstart
 
 ```
-sudo apt install ./structor_0.11.0_amd64.deb
-structor
+tools/release-build.sh   # cargo build --release, operator home remapped out of the binary
+target/release/structor
 ```
 
 Click a palette button (top-left) — BOX / SPHERE / CYLINDER / WEDGE / PYRAMID — to
@@ -17,7 +17,7 @@ both through the file dialog, default folder `~/Structor`.
 ## What it is
 
 Structor is the design module of the Livyatan Design Suite: a sovereign,
-local-first CAD program in Rust on fyrox. It is an alternative to online cloud-based CAD platforms — drop
+local-first CAD program in Rust on fyrox. It is a TinkerCAD replacement — drop
 primitive solids on a build plate, drag/rotate/scale them with gizmos, mark
 negatives as holes, group and boolean-merge, then export the resolved solid
 to a watertight STL. No browser, no cloud, no account, no network.
@@ -28,7 +28,7 @@ The scene is a tree of shapes that maps 1:1 onto a JSON-CSG grammar, so a saved
 the manifold engine — the same backend OpenSCAD uses — so what you preview is what
 the export produces.
 
-The installed binary is `/usr/bin/structor`. 85 in-crate tests (`cargo test`); the
+The binary is `target/release/structor`. 85 in-crate tests (`cargo test`); the
 camera/spacemouse canon tests live in the vendored chimaera crate.
 
 ## Why the name
@@ -96,13 +96,13 @@ parts for a real shop takes the builder's name, not the architect's.
 - **PLATE clear keeps the grid** (2026-09-05): the grid is its own lines-only sheet
   when the plate is hidden. HOME and FIT ALL always return the camera from a
   SpaceMouse fly to orbit (the "zoom won't re-lock" report).
-- **Photo domes** — SHOP / HILLS / SPACE in the VIEW menu are the older
-  backdrops: an equirect panorama on a sphere around the plate, self-lit, the
-  ground slab hidden while one is up. Where the sphere sits relative to the
-  plate is the operator's placement (MAGIC CARPET / BG LEVEL below); the shipped
-  defaults are the numbers placed by the author on 2026-09-05.
-- **Text + / Text −** — UI text scale for every Livyatan module, saved to
-  `~/.config/livyatan/ui-scale`; restart to apply.
+- **Backdrop system** — the July-2026 skydome: an equirect panorama on a sphere
+  around the plate (radius 700 × world scale), self-lit, the ground slab hidden
+  while a wallpaper is up. Where the sphere sits relative to the plate is the
+  operator's placement (MAGIC CARPET / BG LEVEL above); the shipped defaults are
+  the numbers Jay placed on 2026-09-05.
+- **UI scale** — automatic from the monitor the window opens on (2026-09-12);
+  a saved `~/.config/livyatan/ui-scale` overrides it. No buttons.
 - **The backdrop is a level, the plate is the ship (2026-09-05).** The backdrop
   sphere has a full placement — position and yaw/pitch/roll — around the plate.
   **MAGIC CARPET** (DEBUG pane) hands the SpaceMouse to the backdrop: tilt = glide
@@ -131,7 +131,7 @@ parts for a real shop takes the builder's name, not the architect's.
   preview and every export — hiding is a view, not a delete.
 - **Z datum** — the inspector's Z row is the part's BASE, so Z = 0 rests it on
   the plate (the centre is what moves; the ruler's Z leg reads the same base).
-- **Backdrops** — VIEW menu. SHOP 3D / HILLS 3D / SPACE 3D are levels: real geometry at 1 mm units (a 30 m shop bay, open ground, a station bay) with the plate sitting on the floor, so the view keeps true perspective from any angle. SHOP / HILLS / SPACE are the older skydome wallpapers. BG LEVEL / MAGIC CARPET move whichever is up. Stay inside a level's walls: orbiting out past them shows the sky through the back of the wall.
+- **Backdrops** — SHOP / HILLS / SPACE skydome wallpapers, BG LEVEL trim.
 - **SpaceMouse** — direct hidraw driver (no daemon), full 6-axis nav with the
   CHIMAERA shared-feel system: every sign/source/sensitivity is user data in
   `~/.config/structor/nav.json`, edited live in the NAV panel.
@@ -241,7 +241,7 @@ binary never consults them.
 ## Shop export (2026-08-31)
 
 The model is truth: dimensioned drawings and machine cut files come FROM the
-scene (the shop-export design note; first customer = the WHIPS gasifier).
+scene (SHOP-EXPORT-DESIGN.md; first customer = the WHIPS gasifier).
 
 - **F** cycles the selection's Pro-Tag: untagged → FLAT → ROLLED → CNC →
   PRINT → CAST → STOCK. The tag names the toolchain, not the geometry:

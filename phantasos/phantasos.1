@@ -5,7 +5,10 @@ phantasos \- image generation on your own iron
 .B phantasos
 .br
 .B phantasos shape
-\fI"prompt"\fR [\fIOUT.png\fR] [\fB\-\-model\fR \fINAME\fR] [\fB\-\-seed\fR \fIN\fR] [\fB\-\-size\fR \fIN\fR] [\fB\-\-from\fR \fIIMAGE\fR]
+\fI"prompt"\fR [\fIOUT.png\fR] [\fB\-\-model\fR \fINAME\fR] [\fB\-\-seed\fR \fIN\fR] [\fB\-\-size\fR \fIN\fR] [\fB\-\-from\fR \fIIMAGE\fR] [\fB\-\-idiolect\fR \fINAME\fR]
+.br
+.B phantasos idiolects
+[\fB\-\-json\fR]
 .br
 .B phantasos models
 .br
@@ -16,6 +19,9 @@ Bare invocation opens the window: type a prompt, press Create Image. Renders run
 on a local stable-diffusion.cpp (Vulkan) backend \(em no cloud, no account.
 The first render loads the model and takes minutes; after that the model
 stays resident. Closing the window shuts the backend down and frees the GPU.
+.PP
+\fB\-\-idiolect\fR \fINAME\fR paints a style onto the prompt (the window's Style
+button); \fBphantasos idiolects\fR lists the styles, \fB\-\-json\fR as JSON.
 .PP
 Models: \fBklein\fR (FLUX.2 klein 4B, the default \(em text-to-image and
 reference edit in one 4-step model), \fBschnell\fR (FLUX.1 Schnell) and

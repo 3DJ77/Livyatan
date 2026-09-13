@@ -57,7 +57,7 @@ starts from a picture you already have.
 
 Top bar, one button high, in three panes across the window (Structor's layout): FILE
 (Folder…, Save as…, Export…, Pick image…, Open in gimp, swap), BUILD (Create Image, Model,
-Fetch), NAV/UI (Weights…, Server, Fit, A+/A-). The weights folder in force
+Fetch), NAV/UI (Weights…, Server, Fit). The weights folder in force
 shows in the status line. While a model loads or a render runs, the picture area shows a blown-glass hourglass
 with real falling sand: a cellular automaton (each grain falls, slides or rolls; the crater,
 the stream and the heap follow) wearing the render's own sand pixels, paced so the top empties in the time the last render of

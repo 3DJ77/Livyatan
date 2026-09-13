@@ -24,7 +24,7 @@ The window opens on the GilgaMESH splash while it loads.
   run (sideways phone shots, clutter at the edges). Each writes a new PNG
   into the output dir and points the path box at it — the original is
   never touched.
-- **A+ / A-** scale the UI text of every Livyatan module (restart to apply).
+- The UI sizes itself to the screen it opens on (a 4K monitor gets a larger UI); a saved `~/.config/livyatan/ui-scale` overrides that.
 - **mm tall** sets the output height in millimeters (default 80).
 - **Make solid** runs the chain and streams each stage live: paint (if a
   prompt), trellis reconstruction, STL scale, watertight remesh (on the server path the raw STL is copied to `-watertight.stl` as-is — the native pass only degraded the server's closed meshes; `GILGAMESH_FORCE_REMESH=1` runs it anyway; when the server's mesh is not strictly watertight the native result is also written as `NAME-remeshed.stl`, a fallback only if a slicer refuses the raw; the prompt / light paths still remesh). This is

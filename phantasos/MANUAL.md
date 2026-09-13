@@ -69,8 +69,8 @@ the suite can make them real.
 - **Open in…** — hands the current render to gimp/krita/inkscape/gthumb/eog/
   feh/nomacs; first installed wins, `swap` cycles, choice persisted to
   `~/.config/phantasos/editor`.
-- **A+ / A-** — UI text scale for every Livyatan module (saved to
-  `~/.config/livyatan/ui-scale`; restart to apply).
+- **UI scale** — automatic from the monitor the window opens on (2026-09-12);
+  a saved `~/.config/livyatan/ui-scale` overrides it. No buttons.
 - **Fit** (fit to monitor) — native Lanczos resize to the monitor the window is
   on (up or down), then opens the copy in the editor.
 
@@ -93,7 +93,8 @@ tabulated in the README; they live under `PHANTASOS_MODEL_DIR` in
 ## Headless
 
 ```
-phantasos shape "PROMPT" [OUT.png] [--model NAME] [--seed N] [--size PX] [--from IMAGE]
+phantasos shape "PROMPT" [OUT.png] [--model NAME] [--seed N] [--size PX] [--from IMAGE] [--idiolect NAME]
+phantasos idiolects [--json]
 ```
 
 Same pipeline as the window, same recipe table, prints the output path.
@@ -112,6 +113,12 @@ Same pipeline as the window, same recipe table, prints the output path.
 - `--from IMAGE` — start image. On klein it is a reference (composition
   stays, the prompt is the change); on Schnell and FLUX.2 dev it is img2img
   at `PHANTASOS_STRENGTH`. A path that isn't a file exits 1.
+- `--idiolect NAME` — paint a style onto the prompt, the same list the
+  window's Style button offers. Without it the prompt reaches the renderer
+  exactly as typed. An unknown name exits 1.
+- `phantasos idiolects` lists every style with its one-line summary;
+  `--json` prints the same catalogue as JSON. User styles live in
+  `~/.config/phantasos/idiolect/`.
 
 ## Using it
 
