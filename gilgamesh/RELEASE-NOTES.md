@@ -1,4 +1,8 @@
-# GilgaMESH 0.2.0 — 2026-09-05
+# GilgaMESH 0.2.1 — 2026-09-12
+
+- The UI sizes itself to the monitor the window opens on; a saved `~/.config/livyatan/ui-scale` overrides it. Text + / Text − are gone.
+
+## Previously, 0.2.0 — 2026-09-05
 
 - Top bar in three rounded panes on one row (paper | rock | text size), 1600-wide window.
   Every button has a hover tooltip. On the server path

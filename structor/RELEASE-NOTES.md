@@ -1,4 +1,8 @@
-# Structor 0.11.0 — 2026-09-05
+# Structor 0.11.1 — 2026-09-12
+
+- The UI sizes itself to the monitor the window opens on (a 4K screen gets a larger UI); a saved `~/.config/livyatan/ui-scale` overrides it. The A+ / A- buttons are gone.
+
+## Previously, 0.11.0 — 2026-09-05
 
 First public release.
 

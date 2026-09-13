@@ -1,4 +1,8 @@
-# Phantasos 0.3.0 — 2026-09-05
+# Phantasos 0.3.1 — 2026-09-12
+
+- The UI sizes itself to the monitor the window opens on; a saved `~/.config/livyatan/ui-scale` overrides it. Text + / Text − are gone. The prompt column scales with the rest.
+
+## Previously, 0.3.0 — 2026-09-05
 
 - Text + / Text − buttons resize the suite text (restart to apply).
 - Every button has a hover tooltip.

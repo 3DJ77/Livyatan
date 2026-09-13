@@ -12,18 +12,18 @@ gates. That is a deliberate choice, stated plainly, not an oversight.
 
 | module | what it does | version |
 |---|---|---|
-| [Structor](structor/) | CAD bench: solids in, drawings and cut files out | 0.11.0 |
-| [GilgaMESH](gilgamesh/) | a photo in, a watertight mm-scaled STL out | 0.2.0 |
-| [Phantasos](phantasos/) | image generation from a prompt or another image, local weights | 0.3.0 |
-| [Glyptica](glyptica/) | artwork in; SVG cut lines and a carved relief STL out | 0.1.1 (pre-beta) |
-| [Nazca](nazca/) | the viewer: walk any G-code or resin job before the machine does | 0.1.1 (pre-beta) |
+| [Structor](structor/) | CAD bench: solids in, drawings and cut files out | 0.11.1 |
+| [GilgaMESH](gilgamesh/) | a photo in, a watertight mm-scaled STL out | 0.2.1 |
+| [Phantasos](phantasos/) | image generation from a prompt or another image, local weights | 0.3.1 |
+| [Glyptica](glyptica/) | artwork in; SVG cut lines and a carved relief STL out | 0.1.2 (pre-beta) |
+| [Nazca](nazca/) | the viewer: walk any G-code or resin job before the machine does | 0.1.2 (pre-beta) |
 
 Each module directory holds its `.deb`, README, MANUAL, RUNBOOK and man page.
 
 ## Install
 
 ```
-sudo apt install ./structor_0.11.0_amd64.deb
+sudo apt install ./structor_0.11.1_amd64.deb
 ```
 
 Debian 13 (trixie), amd64. Tested on: an 8 GB NVIDIA T1000 workstation
